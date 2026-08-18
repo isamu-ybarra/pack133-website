@@ -5,7 +5,7 @@ eyebrow: Your next adventure starts here
 navOrder: 4
 ---
 
-## Cub Scouts is for your family
+## Cub Scouts® is for your family
 
 Pack 133 welcomes girls and boys in kindergarten through fifth grade. No previous Scouting experience is needed, and families are welcome to visit before registering.
 
@@ -13,7 +13,7 @@ Pack 133 welcomes girls and boys in kindergarten through fifth grade. No previou
 
 1. **Come meet us.** Visit an upcoming pack meeting or public event.
 2. **Ask questions.** A leader will explain dens, activities, costs, uniforms, and volunteer opportunities.
-3. **Register.** Complete the official Scouting America application when your family is ready.
+3. **Register.** Complete the official Scouting America® application when your family is ready.
 
 ## What to bring to your first visit
 

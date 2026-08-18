@@ -9,7 +9,7 @@ navOrder: 2
 
 Pack 133 has served The Colony since 1987. Our program brings families together for hands-on activities, outdoor adventures, community service, and age-appropriate leadership opportunities.
 
-Cub Scouts welcomes girls and boys from kindergarten through fifth grade. Scouts participate in a small, grade-based den and come together with the whole pack for larger activities and celebrations.
+Cub Scouts® welcomes girls and boys from kindergarten through fifth grade. Scouts participate in a small, grade-based den and come together with the whole pack for larger activities and celebrations.
 
 ## What families can expect
 
@@ -23,6 +23,6 @@ Cub Scouts welcomes girls and boys from kindergarten through fifth grade. Scouts
 
 ## Part of a larger Scouting community
 
-Pack 133 follows the policies and program of Scouting America. Our registered adult leaders complete required background checks and Youth Protection Training.
+Pack 133 follows the policies and program of Scouting America®. Our registered adult leaders complete required background checks and Youth Protection Training.
 
 [Learn how to join Pack 133](../join/)

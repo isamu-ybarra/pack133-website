@@ -1,7 +1,7 @@
 ---
 title: New Family Guide
 description: A practical introduction to dens, uniforms, advancement, meetings, and family participation in Pack 133.
-eyebrow: New to Cub Scouts?
+eyebrow: New to Cub Scouts®?
 navOrder: 5
 ---
 
@@ -23,6 +23,6 @@ Cub Scouting is designed for families. Parents and guardians help with activitie
 
 ## Safety
 
-Pack 133 follows Scouting America's Youth Protection policies, including two-deep registered leadership and required training for registered adult leaders.
+Pack 133 follows Scouting America® Youth Protection policies, including two-deep registered leadership and required training for registered adult leaders.
 
 > **Update before launch:** Add Pack 133-specific dues, uniform guidance, communication tools, volunteer expectations, and a new-family checklist.

@@ -17,6 +17,7 @@ const expectedPages = [
 
 test('production build contains every core route', async () => {
   await Promise.all(expectedPages.map((page) => access(new URL(`../dist/${page}`, import.meta.url))));
+  await access(new URL('../dist/brand/scouting-america-logo.png', import.meta.url));
 });
 
 test('home page includes the primary content and accessible navigation', async () => {
@@ -45,4 +46,19 @@ test('placeholder integrations fail safely', async () => {
   assert.match(calendar, /Calendar connection coming soon/);
   assert.match(home, /Meeting schedule coming soon/);
   assert.doesNotMatch(home, /mailto:/);
+});
+
+test('brand tokens and repository guidance match the official audit', async () => {
+  const css = await readFile(new URL('../src/styles/global.css', import.meta.url), 'utf8');
+  const instructions = await readFile(new URL('../AGENTS.md', import.meta.url), 'utf8');
+  const footer = await readFile(new URL('../dist/index.html', import.meta.url), 'utf8');
+
+  for (const token of ['#003f87', '#fcd116', '#ce1126', '#003366', '#9ab3d5', '#e9e9e4', '#d6cebd', '#515354', '#232528']) {
+    assert.match(css.toLowerCase(), new RegExp(token));
+  }
+  assert.doesNotMatch(css, /Avenir/i);
+  assert.match(css, /Montserrat Variable/);
+  assert.match(instructions, /scouting\.webdamdb\.com\/bp/);
+  assert.match(footer, /Cub Scouts® and Scouting America® are registered trademarks/);
+  assert.match(footer, /brand\/scouting-america-logo\.png/);
 });

@@ -7,7 +7,7 @@ navOrder: 6
 
 ## Official Scouting resources
 
-- [Cub Scouts program overview](https://www.scouting.org/programs/cub-scouts/)
+- [Cub Scouts® program overview](https://www.scouting.org/programs/cub-scouts/)
 - [Youth Protection and safety](https://www.scouting.org/health-and-safety/)
 - [Guide to Safe Scouting](https://www.scouting.org/health-and-safety/gss/)
 - [Find a local unit on BeAScout](https://beascout.scouting.org/)

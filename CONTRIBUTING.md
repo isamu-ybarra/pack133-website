@@ -2,6 +2,8 @@
 
 All public website content is visible in this public repository. Never publish rosters, private contact information, medical information, or photos without the required permission.
 
+Before changing colors, typography, logos, photography, naming, or campaign language, read [the repository brand guidelines](docs/brand-guidelines.md). Official Scouting artwork must come from the linked Scouting America brand portal and must not be altered.
+
 ## Edit an existing page
 
 Open a file in `src/content/pages/` on GitHub, select the pencil icon, edit the Markdown below the `---` frontmatter block, and commit the change to `main`.

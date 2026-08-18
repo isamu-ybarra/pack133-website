@@ -2,6 +2,8 @@
 
 A fast, static website for Cub Scout Pack 133 in The Colony, Texas. Astro turns editable Markdown files into the finished site, and GitHub Actions publishes the site to GitHub Pages.
 
+Brand and trademark work must follow [AGENTS.md](AGENTS.md) and the maintained [brand guidelines and audit](docs/brand-guidelines.md), which reference the official Scouting America brand portal.
+
 ## Before launch
 
 Update these items first:
