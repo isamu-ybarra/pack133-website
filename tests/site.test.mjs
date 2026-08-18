@@ -65,6 +65,7 @@ test('brand tokens and repository guidance match the official audit', async () =
   }
   assert.doesNotMatch(css, /Avenir/i);
   assert.match(css, /Montserrat Variable/);
+  assert.match(css, /\.page-hero \.eyebrow \{ color: var\(--gold\); \}/);
   assert.match(instructions, /scouting\.webdamdb\.com\/bp/);
   assert.match(footer, /Cub Scouts® and Scouting America® are registered trademarks/);
   assert.match(footer, /brand\/scouting-america-logo\.png/);

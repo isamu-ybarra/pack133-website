@@ -246,6 +246,7 @@ p { margin: 0 0 1rem; }
 .page-hero { position: relative; overflow: hidden; padding-block: clamp(4.5rem, 9vw, 8rem); color: white; background: linear-gradient(125deg, var(--navy-deep), var(--navy)); }
 .page-hero::after { content: "133"; position: absolute; right: -1rem; bottom: -5.5rem; color: rgb(255 255 255 / 7%); font-size: clamp(12rem, 27vw, 27rem); font-weight: 900; line-height: 1; letter-spacing: -0.09em; }
 .page-hero-inner { position: relative; z-index: 1; }
+.page-hero .eyebrow { color: var(--gold); }
 .page-hero h1 { max-width: 900px; color: white; }
 .page-hero-inner > p:last-child { max-width: 750px; margin: 1.5rem 0 0; color: rgb(255 255 255 / 80%); font-size: clamp(1.05rem, 2vw, 1.3rem); }
 
