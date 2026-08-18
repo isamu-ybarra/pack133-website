@@ -28,6 +28,7 @@ These instructions apply to every change in this repository.
 
 ## Review checklist
 
+- The site is intentionally public-but-unlisted. Preserve the global `noindex` robots meta tag, do not add a sitemap, and do not block HTML crawling in `robots.txt`; crawlers must be able to read `noindex`. Remove this protection only with explicit owner approval.
 - Run `npm run verify` before committing.
 - For visual changes, check contrast, keyboard focus, responsive behavior, logo integrity, approved colors, approved fonts, and trademark notation.
 - Update `docs/brand-guidelines.md` when a brand-related decision or approved asset changes.

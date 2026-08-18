@@ -4,6 +4,8 @@ A fast, static website for Cub Scout Pack 133 in The Colony, Texas. Astro turns 
 
 Brand and trademark work must follow [AGENTS.md](AGENTS.md) and the maintained [brand guidelines and audit](docs/brand-guidelines.md), which reference the official Scouting America brand portal.
 
+The deployed preview is intentionally public but unlisted: every page carries a `noindex` directive and the build emits no sitemap. Do not remove those protections until the pack intentionally launches for public discovery.
+
 ## Before launch
 
 Update these items first:

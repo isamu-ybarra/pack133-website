@@ -12,7 +12,6 @@ const expectedPages = [
   'updates/index.html',
   '404.html',
   'robots.txt',
-  'sitemap-index.xml',
 ];
 
 test('production build contains every core route', async () => {
@@ -26,11 +25,18 @@ test('home page includes the primary content and accessible navigation', async (
   assert.match(html, /Join the adventure/);
   assert.match(html, /aria-label="Main navigation"/);
   assert.match(html, /Skip to main content/);
+  assert.match(html, /name="robots" content="noindex, nofollow, noarchive, nosnippet, noimageindex"/);
   if (process.env.GITHUB_ACTIONS === 'true') {
     const repository = process.env.GITHUB_REPOSITORY?.split('/')[1];
     assert.match(html, new RegExp(`href="/${repository}/join/"`));
     assert.doesNotMatch(html, new RegExp(`/${repository}(join|calendar|our-pack)`));
   }
+});
+
+test('the public preview does not advertise itself to search engines', async () => {
+  const robots = await readFile(new URL('../dist/robots.txt', import.meta.url), 'utf8');
+  assert.equal(robots, 'User-agent: *\nAllow: /\n');
+  await assert.rejects(access(new URL('../dist/sitemap-index.xml', import.meta.url)));
 });
 
 test('draft content is not included in public listings', async () => {
