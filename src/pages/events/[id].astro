@@ -1,0 +1,28 @@
+---
+import { getCollection, render } from 'astro:content';
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import PageHero from '@/components/PageHero.astro';
+import { formatEventDate } from '@/lib/dates';
+import { withBase } from '@/lib/urls';
+
+export async function getStaticPaths() {
+  const events = await getCollection('events', ({ data }) => !data.draft);
+  return events.map((event) => ({ params: { id: event.id }, props: { event } }));
+}
+
+const { event } = Astro.props;
+const { Content } = await render(event);
+---
+
+<BaseLayout title={event.data.title} description={event.data.description}>
+  <PageHero eyebrow="Pack 133 event" title={event.data.title} description={event.data.description} />
+  <div class="page-shell event-detail section-space">
+    <aside class="event-meta">
+      <div><span>When</span><strong>{formatEventDate(event.data.startDate, event.data.endDate)}</strong></div>
+      <div><span>Where</span><strong>{event.data.location}</strong></div>
+      {event.data.registrationUrl && <a class="button button-gold" href={event.data.registrationUrl} rel="noreferrer">Register</a>}
+      <a class="text-link" href={withBase('/calendar/')}>← Back to calendar</a>
+    </aside>
+    <article class="prose"><Content /></article>
+  </div>
+</BaseLayout>

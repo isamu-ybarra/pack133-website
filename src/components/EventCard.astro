@@ -1,0 +1,16 @@
+---
+import type { CollectionEntry } from 'astro:content';
+import { formatEventDate } from '@/lib/dates';
+import { withBase } from '@/lib/urls';
+
+interface Props { event: CollectionEntry<'events'>; }
+const { event } = Astro.props;
+---
+
+<article class="event-card">
+  <p class="event-date">{formatEventDate(event.data.startDate, event.data.endDate)}</p>
+  <h3><a href={withBase(`/events/${event.id}/`)}>{event.data.title}</a></h3>
+  <p>{event.data.description}</p>
+  <p class="event-location">{event.data.location}</p>
+  <a class="text-link" href={withBase(`/events/${event.id}/`)}>Event details <span aria-hidden="true">→</span></a>
+</article>

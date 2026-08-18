@@ -1,0 +1,20 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import PageHero from '@/components/PageHero.astro';
+import UpdateCard from '@/components/UpdateCard.astro';
+
+const updates = (await getCollection('updates', ({ data }) => !data.draft))
+  .sort((a, b) => b.data.publishDate.valueOf() - a.data.publishDate.valueOf());
+---
+
+<BaseLayout title="Pack Updates" description="News and announcements from Cub Scout Pack 133.">
+  <PageHero eyebrow="From around the pack" title="Pack Updates" description="Announcements, recent adventures, and helpful reminders for Pack 133 families." />
+  <section class="section-space">
+    <div class="page-shell update-list">
+      {updates.length > 0
+        ? updates.map((update) => <UpdateCard update={update} />)
+        : <div class="empty-state">The first pack update is coming soon.</div>}
+    </div>
+  </section>
+</BaseLayout>

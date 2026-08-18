@@ -1,0 +1,42 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import PageHero from '@/components/PageHero.astro';
+import EventCard from '@/components/EventCard.astro';
+import site from '@/data/site.json';
+
+const allEvents = (await getCollection('events', ({ data }) => !data.draft))
+  .sort((a, b) => a.data.startDate.valueOf() - b.data.startDate.valueOf());
+const now = new Date();
+const upcoming = allEvents.filter((event) => event.data.startDate >= now);
+---
+
+<BaseLayout title="Calendar & Events" description="Upcoming meetings, outings, and family events for Cub Scout Pack 133.">
+  <PageHero eyebrow="Plan the next adventure" title="Calendar & Events" description="Featured event details live here, with the complete pack schedule available in our shared calendar." />
+  <section class="section-space">
+    <div class="page-shell">
+      <div class="section-heading">
+        <div><p class="eyebrow">Coming up</p><h2>Featured events</h2></div>
+      </div>
+      {upcoming.length > 0
+        ? <div class="event-grid">{upcoming.map((event) => <EventCard event={event} />)}</div>
+        : <div class="empty-state">No upcoming featured events have been posted yet.</div>}
+    </div>
+  </section>
+  <section class="calendar-section section-space">
+    <div class="page-shell">
+      <div class="section-heading">
+        <div><p class="eyebrow">The complete schedule</p><h2>Pack calendar</h2></div>
+        {site.googleCalendarUrl && <a class="button button-outline" href={site.googleCalendarUrl} rel="noreferrer">Open in Google Calendar</a>}
+      </div>
+      {site.googleCalendarEmbedUrl ? (
+        <iframe class="calendar-frame" src={site.googleCalendarEmbedUrl} title="Pack 133 Google Calendar" loading="lazy"></iframe>
+      ) : (
+        <div class="calendar-placeholder">
+          <strong>Calendar connection coming soon</strong>
+          <p>Add the public Google Calendar embed URL in <code>src/data/site.json</code> to display the complete schedule here.</p>
+        </div>
+      )}
+    </div>
+  </section>
+</BaseLayout>

@@ -1,0 +1,132 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import EventCard from '@/components/EventCard.astro';
+import site from '@/data/site.json';
+import { withBase } from '@/lib/urls';
+
+const events = (await getCollection('events', ({ data }) => !data.draft))
+  .filter((event) => event.data.startDate >= new Date())
+  .sort((a, b) => a.data.startDate.valueOf() - b.data.startDate.valueOf());
+const featuredEvents = events.filter((event) => event.data.featured).slice(0, 3);
+---
+
+<BaseLayout>
+  <section class="home-hero">
+    <div class="hero-orbit hero-orbit-one" aria-hidden="true"></div>
+    <div class="hero-orbit hero-orbit-two" aria-hidden="true"></div>
+    <div class="page-shell hero-grid">
+      <div class="hero-copy">
+        <p class="eyebrow eyebrow-light">Cub Scouts in {site.location}</p>
+        <h1>Big adventures.<br /><em>Right here at home.</em></h1>
+        <p class="hero-lede">Pack 133 helps kids grow through outdoor discovery, hands-on learning, service, and fun the whole family can share.</p>
+        <div class="button-row">
+          <a class="button button-gold" href={withBase('/join/')}>Join the adventure</a>
+          <a class="button button-ghost" href={withBase('/calendar/')}>See what’s next</a>
+        </div>
+      </div>
+      <div class="hero-mark">
+        <div class="hero-logo-frame">
+          <img src={withBase('/pack133.jpg')} width="512" height="512" alt={`${site.shortName} — established ${site.founded}, ${site.location}`} />
+        </div>
+        <p><strong>Since {site.founded}</strong><span>Adventure • Service • Character</span></p>
+      </div>
+    </div>
+    <div class="trail-line" aria-hidden="true"></div>
+  </section>
+
+  <section class="quick-facts" aria-labelledby="quick-facts-title">
+    <div class="page-shell">
+      <p class="eyebrow">Your family belongs here</p>
+      <h2 id="quick-facts-title">Start exploring Pack 133</h2>
+      <div class="fact-grid">
+        <article class="fact-card">
+          <span class="fact-number">01</span>
+          <h3>Who we serve</h3>
+          <p>Girls and boys in kindergarten through fifth grade across The Colony area.</p>
+          <a class="text-link" href={withBase('/our-pack/')}>Meet our pack <span aria-hidden="true">→</span></a>
+        </article>
+        <article class="fact-card fact-card-blue">
+          <span class="fact-number">02</span>
+          <h3>What we do</h3>
+          <p>Camping, building, exploring, serving, racing, learning—and plenty of laughing.</p>
+          <a class="text-link" href={withBase('/updates/')}>See pack life <span aria-hidden="true">→</span></a>
+        </article>
+        <article class="fact-card fact-card-red">
+          <span class="fact-number">03</span>
+          <h3>When we meet</h3>
+          <p>{site.meetingSchedule}. Event details stay current on our calendar.</p>
+          <a class="text-link" href={withBase('/calendar/')}>View calendar <span aria-hidden="true">→</span></a>
+        </article>
+        <article class="fact-card fact-card-gold">
+          <span class="fact-number">04</span>
+          <h3>How to join</h3>
+          <p>Visit, meet the pack, ask every question, and register when your family is ready.</p>
+          <a class="text-link" href={withBase('/join/')}>Three easy steps <span aria-hidden="true">→</span></a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="featured-events section-space" aria-labelledby="events-title">
+    <div class="page-shell">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">Pack the calendar</p>
+          <h2 id="events-title">Our next adventures</h2>
+        </div>
+        <a class="button button-outline" href={withBase('/calendar/')}>Full calendar</a>
+      </div>
+      {featuredEvents.length > 0 ? (
+        <div class="event-grid">
+          {featuredEvents.map((event) => <EventCard event={event} />)}
+        </div>
+      ) : (
+        <div class="empty-state">New events are on the way. Check back soon.</div>
+      )}
+    </div>
+  </section>
+
+  <section class="safety-section section-space">
+    <div class="page-shell safety-grid">
+      <div class="safety-badge" aria-hidden="true">
+        <span>Two-deep</span>
+        <strong>Leadership</strong>
+        <span>Every event</span>
+      </div>
+      <div>
+        <p class="eyebrow">Our promise to families</p>
+        <h2>Safe adventures are the only kind we take.</h2>
+        <p>Pack 133 follows Scouting America’s Youth Protection policies. Registered leaders complete required background checks and training, and two registered adult leaders are present at Scouting activities.</p>
+        <a class="button button-navy" href="https://www.scouting.org/health-and-safety/" rel="noreferrer">Explore Scouting safety</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="gallery-section section-space" aria-labelledby="gallery-title">
+    <div class="page-shell">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">A glimpse of the fun</p>
+          <h2 id="gallery-title">Every outing tells a story.</h2>
+        </div>
+        <p class="section-note">Approved Pack 133 photos will live here.</p>
+      </div>
+      <div class="photo-grid">
+        <div class="photo-placeholder photo-one"><span>Campouts</span></div>
+        <div class="photo-placeholder photo-two"><span>Build days</span></div>
+        <div class="photo-placeholder photo-three"><span>Service</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="join-banner">
+    <div class="page-shell join-banner-inner">
+      <div>
+        <p class="eyebrow eyebrow-light">Ready when you are</p>
+        <h2>Your family’s next story starts with “Let’s go.”</h2>
+      </div>
+      <a class="button button-gold" href={withBase('/join/')}>Meet Pack 133</a>
+    </div>
+  </section>
+</BaseLayout>

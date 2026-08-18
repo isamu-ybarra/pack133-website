@@ -1,0 +1,41 @@
+---
+import site from '@/data/site.json';
+import { withBase } from '@/lib/urls';
+const year = new Date().getFullYear();
+---
+
+<footer class="site-footer">
+  <div class="footer-grid page-shell">
+    <div class="footer-brand">
+      <img src={withBase('/pack133.jpg')} width="92" height="92" alt={`${site.shortName} logo`} />
+      <div>
+        <strong>{site.name}</strong>
+        <p>{site.serviceArea}</p>
+        {site.email
+          ? <a href={`mailto:${site.email}`}>{site.email}</a>
+          : <span class="placeholder-text">Pack email coming soon</span>}
+      </div>
+    </div>
+    <div>
+      <strong>Explore</strong>
+      <nav class="footer-links" aria-label="Footer navigation">
+        <a href={withBase('/calendar/')}>Calendar & events</a>
+        <a href={withBase('/join/')}>Join Pack 133</a>
+        <a href={withBase('/new-families/')}>New family guide</a>
+        <a href={withBase('/resources/')}>Resources</a>
+      </nav>
+    </div>
+    <div>
+      <strong>Scouting links</strong>
+      <nav class="footer-links" aria-label="Scouting links">
+        <a href="https://www.scouting.org/programs/cub-scouts/" rel="noreferrer">Cub Scouts</a>
+        <a href="https://www.scouting.org/health-and-safety/" rel="noreferrer">Health & safety</a>
+        <a href={site.joinUrl} rel="noreferrer">Find Pack 133 on BeAScout</a>
+      </nav>
+    </div>
+  </div>
+  <div class="footer-bottom page-shell">
+    <span>© {year} {site.name}</span>
+    <span>Prepared for families in {site.location}</span>
+  </div>
+</footer>

@@ -1,0 +1,58 @@
+---
+import Header from '@/components/Header.astro';
+import Footer from '@/components/Footer.astro';
+import site from '@/data/site.json';
+import '@/styles/global.css';
+
+interface Props {
+  title?: string;
+  description?: string;
+  image?: string;
+}
+
+const {
+  title = site.name,
+  description = `${site.name} offers fun, adventure, service, and character-building for Cub Scouts in ${site.location}.`,
+  image = '/pack133.jpg',
+} = Astro.props;
+const pageTitle = title === site.name ? title : `${title} | ${site.shortName}`;
+const canonical = new URL(Astro.url.pathname, Astro.site);
+const socialImage = new URL(image.replace(/^\//, ''), Astro.site);
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <meta name="theme-color" content="#003f87" />
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonical} />
+    <link rel="icon" type="image/jpeg" href={import.meta.env.BASE_URL + 'pack133.jpg'} />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={pageTitle} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:image" content={socialImage} />
+    <meta name="twitter:card" content="summary" />
+    <title>{pageTitle}</title>
+  </head>
+  <body>
+    <a class="skip-link" href="#main-content">Skip to main content</a>
+    <Header />
+    <main id="main-content">
+      <slot />
+    </main>
+    <Footer />
+    <script>
+      const menuButton = document.querySelector('[data-menu-button]');
+      const nav = document.querySelector('[data-nav]');
+      menuButton?.addEventListener('click', () => {
+        const isOpen = menuButton.getAttribute('aria-expanded') === 'true';
+        menuButton.setAttribute('aria-expanded', String(!isOpen));
+        nav?.toggleAttribute('data-open', !isOpen);
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,13 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import { withBase } from '@/lib/urls';
+---
+
+<BaseLayout title="Page not found" description="The page you requested could not be found.">
+  <section class="not-found page-shell">
+    <p class="eyebrow">Trail marker 404</p>
+    <h1>Looks like this trail ends here.</h1>
+    <p>The page may have moved, or the link may need an update.</p>
+    <a class="button button-navy" href={withBase('/')}>Return home</a>
+  </section>
+</BaseLayout>

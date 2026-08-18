@@ -1,0 +1,15 @@
+---
+import type { CollectionEntry } from 'astro:content';
+import { formatPublishDate } from '@/lib/dates';
+import { withBase } from '@/lib/urls';
+
+interface Props { update: CollectionEntry<'updates'>; }
+const { update } = Astro.props;
+---
+
+<article class="update-card">
+  <p class="eyebrow">{formatPublishDate(update.data.publishDate)}</p>
+  <h2><a href={withBase(`/updates/${update.id}/`)}>{update.data.title}</a></h2>
+  <p>{update.data.description}</p>
+  <a class="text-link" href={withBase(`/updates/${update.id}/`)}>Read update <span aria-hidden="true">→</span></a>
+</article>
