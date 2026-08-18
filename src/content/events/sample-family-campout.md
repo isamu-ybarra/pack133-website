@@ -5,7 +5,7 @@ startDate: 2030-10-12T09:00:00-05:00
 endDate: 2030-10-12T16:00:00-05:00
 location: Location to be confirmed
 featured: true
-draft: false
+draft: true
 ---
 
 Replace this sample with the confirmed campout details before publishing the site to families.

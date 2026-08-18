@@ -19,7 +19,11 @@ Cub Scouts® welcomes girls and boys from kindergarten through fifth grade. Scou
 - Community service and good-turn projects
 - A welcoming, family-centered program
 
-> **Update before launch:** Add Pack 133's chartered organization, current schools served, leadership contacts, and the pack's story here.
+## Our Scouting community
+
+Pack 133 is part of the **Longhorn Council** and is proudly chartered by **American Legion Holley-Riddle Post 21** in The Colony.
+
+We know families are busy. Scouts are encouraged to participate, but the standard is always the Cub Scout motto: **Do Your Best.** Many adventures can be completed with family when a Scout misses a meeting.
 
 ## Part of a larger Scouting community
 

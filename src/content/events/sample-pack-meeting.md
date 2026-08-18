@@ -5,7 +5,7 @@ startDate: 2030-09-10T18:30:00-05:00
 endDate: 2030-09-10T20:00:00-05:00
 location: Meeting location to be confirmed
 featured: true
-draft: false
+draft: true
 ---
 
 This sample event demonstrates the event format. Replace it with a real Pack 133 event before launch.

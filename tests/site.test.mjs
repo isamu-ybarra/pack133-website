@@ -46,11 +46,12 @@ test('draft content is not included in public listings', async () => {
   assert.doesNotMatch(calendar, /Unpublished draft example/);
 });
 
-test('placeholder integrations fail safely', async () => {
+test('verified public integrations are connected without exposing a placeholder email', async () => {
   const calendar = await readFile(new URL('../dist/calendar/index.html', import.meta.url), 'utf8');
   const home = await readFile(new URL('../dist/index.html', import.meta.url), 'utf8');
-  assert.match(calendar, /Calendar connection coming soon/);
-  assert.match(home, /Meeting schedule coming soon/);
+  assert.match(calendar, /calendar\.google\.com\/calendar\/embed/);
+  assert.match(calendar, /Subscribe to calendar/);
+  assert.match(home, /Third Tuesday of each month/);
   assert.doesNotMatch(home, /mailto:/);
 });
 

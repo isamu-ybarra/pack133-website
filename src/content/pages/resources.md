@@ -10,11 +10,16 @@ navOrder: 6
 - [Cub Scouts® program overview](https://www.scouting.org/programs/cub-scouts/)
 - [Youth Protection and safety](https://www.scouting.org/health-and-safety/)
 - [Guide to Safe Scouting](https://www.scouting.org/health-and-safety/gss/)
-- [Find a local unit on BeAScout](https://beascout.scouting.org/)
+- [Pack 133 registration on BeAScout](https://beascout.scouting.org/list/?zip=75056&program[]=pack&unitID=48598)
+- [Scoutbook](https://scoutbook.scouting.org/)
 
 ## Pack 133 resources
 
-> **Update before launch:** Add links to the pack calendar, dues or payment information, approved forms, packing lists, advancement resources, and leader contacts. Do not publish private rosters or personal information.
+- [View the Pack 133 calendar](../calendar/)
+- [Subscribe to the Pack 133 calendar](https://calendar.google.com/calendar/ical/webmasterpack133%40gmail.com/public/basic.ics)
+- [Directions to pack meetings](https://maps.app.goo.gl/PBezSgpDNen4aBvk8)
+
+Pack meetings are held on the third Tuesday of each month, August through May, at 6:30 p.m. at First United Methodist Church in The Colony. Check the calendar before heading out in case a meeting time or location changes.
 
 ## Website editing
 
