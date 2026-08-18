@@ -8,13 +8,14 @@ The deployed preview is intentionally public but unlisted: every page carries a 
 
 ## Before launch
 
-Update these items first:
+The verified meeting, charter, BeAScout, and calendar details are already connected. Complete the remaining items in the [production-readiness questionnaire](docs/production-readiness-questionnaire.md):
 
-1. Fill in the email, meeting details, calendar URLs, and pack links in `src/data/site.json`.
+1. Add a pack-managed public contact method in `src/data/site.json`.
 2. Replace the two sample events in `src/content/events/`.
 3. Replace the sample welcome post in `src/content/updates/`.
-4. Replace every “Update before launch” note in `src/content/pages/`.
+4. Add confirmed dues, uniform, communication, and new-family guidance.
 5. Add only photos that the pack has permission to publish, with useful alt text.
+6. Update the Parent Orientation deck to current Scouting America branding before publishing a PDF.
 
 ## Local preview
 
