@@ -18,9 +18,7 @@ navOrder: 6
 - [View the Pack 133 calendar](../calendar/)
 - [Subscribe to the Pack 133 calendar](https://calendar.google.com/calendar/ical/webmasterpack133%40gmail.com/public/basic.ics)
 - [Directions to pack meetings](https://maps.app.goo.gl/PBezSgpDNen4aBvk8)
+- [Pack 133 private Facebook group](https://www.facebook.com/groups/CubScoutPack133TheColony/)
+- [Annual Health and Medical Record](https://www.scouting.org/health-and-safety/ahmr/)
 
 Pack meetings are held on the third Tuesday of each month, August through May, at 6:30 p.m. at First United Methodist Church in The Colony. Check the calendar before heading out in case a meeting time or location changes.
-
-## Website editing
-
-Pack leaders can update this page by editing `src/content/pages/resources.md` in GitHub. Every heading, paragraph, and link below the frontmatter is standard Markdown.

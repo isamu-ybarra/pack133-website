@@ -43,6 +43,7 @@ test('draft content is not included in public listings', async () => {
   const updates = await readFile(new URL('../dist/updates/index.html', import.meta.url), 'utf8');
   const calendar = await readFile(new URL('../dist/calendar/index.html', import.meta.url), 'utf8');
   assert.doesNotMatch(updates, /Unpublished draft example/);
+  assert.doesNotMatch(updates, /Welcome to the Pack 133 website/);
   assert.doesNotMatch(calendar, /Unpublished draft example/);
 });
 
@@ -53,6 +54,19 @@ test('verified public integrations are connected without exposing a placeholder 
   assert.match(calendar, /Subscribe to calendar/);
   assert.match(home, /Third Tuesday of each month/);
   assert.doesNotMatch(home, /mailto:/);
+});
+
+test('public pages do not expose editor notes or unfinished-content instructions', async () => {
+  const resources = await readFile(new URL('../dist/resources/index.html', import.meta.url), 'utf8');
+  const newFamilies = await readFile(new URL('../dist/new-families/index.html', import.meta.url), 'utf8');
+  const home = await readFile(new URL('../dist/index.html', import.meta.url), 'utf8');
+  assert.match(resources, /CubScoutPack133TheColony/);
+  assert.match(newFamilies, /Pack 133 uses <strong>BAND<\/strong>/);
+  assert.match(newFamilies, /belt-up pack/);
+  assert.doesNotMatch(resources, /Website editing|standard Markdown|src\/content/);
+  assert.doesNotMatch(newFamilies, /Update before launch/);
+  assert.doesNotMatch(home, /Pack email coming soon|Approved Pack 133 photos will live here/);
+  assert.doesNotMatch(resources + newFamilies, /1fBe6lLaSP4sSraL--pnH8DFAiH_-mJh0/);
 });
 
 test('brand tokens and repository guidance match the official audit', async () => {

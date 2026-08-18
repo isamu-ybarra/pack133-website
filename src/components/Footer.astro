@@ -16,9 +16,7 @@ const year = new Date().getFullYear();
       <div>
         <strong>{site.name}</strong>
         <p>{site.serviceArea}</p>
-        {site.email
-          ? <a href={`mailto:${site.email}`}>{site.email}</a>
-          : <span class="placeholder-text">Pack email coming soon</span>}
+        {site.email && <a href={`mailto:${site.email}`}>{site.email}</a>}
       </div>
     </div>
     <div>

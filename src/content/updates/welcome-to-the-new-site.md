@@ -4,7 +4,7 @@ description: This sample update shows pack leaders how news and announcements ap
 publishDate: 2026-08-18
 tags:
   - website
-draft: false
+draft: true
 ---
 
 Welcome to the new online home of Cub Scout Pack 133 in The Colony, Texas.

@@ -294,7 +294,6 @@ p { margin: 0 0 1rem; }
 .footer-brand img { flex: 0 0 auto; }
 .footer-brand p { max-width: 430px; margin: 0.5rem 0; }
 .footer-brand a { color: var(--gold); }
-.placeholder-text { color: var(--gold); font-style: italic; }
 .footer-links { display: grid; gap: 0.45rem; margin-top: 0.8rem; }
 .footer-links a { width: fit-content; text-decoration: none; }
 .footer-links a:hover { color: var(--gold); text-decoration: underline; }
